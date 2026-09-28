@@ -29,7 +29,49 @@ data={"name":["Deepak","Kags","Poornima","dharani","x","y"],
       "age":[28,28,31,32,pd.NA,pd.NA],
       "city":["blr","chn","cbe","singa",pd.NA,pd.NA]}
 df=pd.DataFrame(data)
-print(df,
-      df.head(1),
-      df.tail(1),
-      df.info())
+#print(df,df.head(1),df.tail(1),df.info())
+#print(df.iloc[0:3,[0,1]])
+#print(df[["age","city"]])
+#print(df.drop("city",axis=1))
+#print(df.drop(columns=["age","city"]))
+#print(df.shape)
+#df.info
+#print(df.info()) #deifference bewteen info and info(), () is always execution , info will give attribute alone
+#broadcasting
+df["age"]+= 5
+#print(df)
+#rename
+#print(df.rename(columns={"city":"place"},inplace=True))
+#print(df)
+#print(df["age"].value_counts())
+#data cleaning
+#getting rid of null values 
+#print(df.isnull().sum())
+#print(df.dropna(how="all"))
+#filling instead of dropping 
+#filling using a random value
+#print(df.fillna(value=0))
+#filling using mean , median , mode for numerical values 
+#print(df["age"].fillna(df["age"].mean()).astype(int))
+#filling NA for string , using a value or mode 
+#print(df["city"].fillna(df["city"].mode()[0]))
+#print(df["city"].fillna(value="chennai"))
+#forward fill and backward fill 
+#print(df.ffill())
+#print(df.bfill())
+#addition of row 
+#df.loc[len(df)]=["Deepak",28,"dpi"]
+#df.loc[len(df)]={"name":"Dpak","age":27,"city":"dhar"}
+#print(df)
+#addition of multiple rows
+new_one={"name":["sam","sanjeev","praba","jessil"],"age":[28,28,27,28],"city":["ney","chn","blr","usa"]}
+new_ones=pd.DataFrame(new_one)
+df=pd.concat([df,new_ones],ignore_index=True)
+#print(df)
+#print(df[df.isna().any(axis=1)])
+#print(df[df[["age","city"]].duplicated(keep="first")])
+#print(df["age"].apply(lambda x:x+5))
+#import csv
+data=pd.read_csv(r"C:\Users\DEEPAK\Downloads\archive (4)\House Price Prediction Dataset.csv")
+#print(data.head())
+print(data.info())
