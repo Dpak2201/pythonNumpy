@@ -29,7 +29,7 @@ j=np.full([2,3],8.5)
 k=np.random.rand(2,3)#random for float number generation
 #print(k)
 l=np.random.randint(20,80,[3,4])#random integer generation
-print(l)
+#print(l)
 m=np.random.randn(2,3)#normal distribution random number generation
 #print(m)
 #type casting 
